@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filling Egg Cartons Challenge</title>
+    <link href="css/fill-egg-cartons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>JS ALGO CHALLENGE:</h1>
+        <h1>Filling Egg Cartons</h1>
+
+        <p>Write a JavaScript program that fills egg cartons from any number of eggs.</p>
+
+        <ul>
+            <li>Write a function called <strong>fillEggCartons(numEggs)</strong></li>
+            <li><strong>numEggs</strong>, an integer, is the total number of eggs.</li>
+            <li>The function starts by assigning <strong>random</strong> prices to each egg.</li>
+            <li>There are 6 possible prices: <strong>25, 30, 35, 40, 45, 50</strong> (cents).</li>
+            <li>The function makes 12-item arrays (cartons) of random egg prices.</li>
+            <li>Calculate the price of each carton, and store the array and price in an object. Ex:<br>
+                <strong>{ eggs: [25,50,40,35,40,35,45,50,30,25,45,35], price: 455 }</strong>
+            </li>
+            <li>Save each object to an array of objects called <strong>objArr</strong>.</li>
+            <li>Sort <strong>objArr</strong> by price, in ascending order (cheapest carton first).</li>
+            <li>Return <strong>objArr</strong> to complete the function.</li>
+            <br>
+            <li><strong>BONUS: Improve Price Parity:</strong></li>
+            <li>Reduce the difference between the min and max priced cartons:</li>
+            <li>Change the price of the first 25-cent egg in the cheapest carton to 51.</li>
+            <li>Change the price of the first 50-cent egg in the most expensive carton to 24.</li>
+            <l1>The 51 and 24 are so we can tell which cartons were affected by these changes.</l1>
+            <li>Recalculate the prices of the two affected cartons.</li>
+            <li>Sort objArr again by price, ascending.</li>
+        </ul>
+
+    </div>
+
+    <script src="js/Classes/EggCarton.js"></script>
+
+    <script>
+        // instantiate instance of EggCarton Class 
+        const ec = new EggCarton();
+
+        console.log(ec.fillEggCartons(52)); // don't sort by price
+        console.log(ec.fillEggCartons(52, true)); // sort by price
+        console.log(ec.fillEggCartons(52, true, true)); // sort and improve price parity
+    </script>
+
+</body>
+
+</html>
